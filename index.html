@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Tiger — Developer & Builder</title>
+  <meta name="description" content="I'm Tiger. I build stuff for the web — backends, APIs, the occasional ML model. Based in the jungle, available remotely."/>
+  <meta name="author" content="Tiger"/>
+  <meta name="keywords" content="tiger, developer, python, fastapi, javascript, portfolio"/>
+
+  <meta property="og:title" content="Tiger — Developer & Builder"/>
+  <meta property="og:description" content="Backend dev who occasionally does frontend. I like fast code, clean APIs, and problems worth solving."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://tiger.dev"/>
+  <meta property="og:image" content="tiger.jpg"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Tiger — Developer"/>
+  <meta name="twitter:description" content="Backend dev who occasionally does frontend."/>
+
+  <meta name="theme-color" content="#0d0d0d"/>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐯</text></svg>"/>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="nav-dot"></span>
+      <span class="nav-name" onclick="smoothScroll('hero')">tiger</span>
+    </div>
+    <ul class="nav-links">
+      <li data-section="about"        onclick="smoothScroll('about')">about</li>
+      <li data-section="projects"     onclick="smoothScroll('projects')">projects</li>
+      <li data-section="skills"       onclick="smoothScroll('skills')">skills</li>
+      <li data-section="testimonials" onclick="smoothScroll('testimonials')">testimonials</li>
+      <li data-section="contact"      onclick="smoothScroll('contact')">contact</li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()">◑</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li onclick="mobileNav('about')">about</li>
+      <li onclick="mobileNav('projects')">projects</li>
+      <li onclick="mobileNav('skills')">skills</li>
+      <li onclick="mobileNav('testimonials')">testimonials</li>
+      <li onclick="mobileNav('contact')">contact</li>
+    </ul>
+  </div>
+
+  <button class="back-to-top" id="backToTop" onclick="smoothScroll('hero')">↑</button>
+
+  <section id="hero" class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">open to work &nbsp;✦</p>
+      <h1 class="hero-title">
+        I build <span class="typed-word"></span><br>
+        for the <span class="highlight">web.</span>
+      </h1>
+      <p class="hero-desc">
+        Developer. Sometimes designer. Full-time predator of bad code.
+        I like fast sites, clean APIs, and problems that actually matter.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-main" onclick="smoothScroll('projects')">see my work</button>
+        <button class="btn-ghost" onclick="smoothScroll('contact')">get in touch</button>
+        <a href="resume.pdf" download class="btn-resume">↓ resume</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <p class="hero-card-label">currently</p>
+        <p class="hero-card-val">hunting bugs 🐾</p>
+        <hr class="card-divider">
+        <p class="hero-card-label">based in</p>
+        <p class="hero-card-val">the jungle</p>
+        <hr class="card-divider">
+        <p class="hero-card-label">stack</p>
+        <p class="hero-card-val">python · js · fastapi</p>
+        <hr class="card-divider">
+        <p class="hero-card-label">status</p>
+        <p class="hero-card-val">🟢 available</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-section">
+    <div class="section-inner">
+      <div class="about-layout">
+        <div class="about-left">
+          <p class="section-tag">01 — about</p>
+          <h2 class="section-heading">A bit about<br>the tiger.</h2>
+          <div class="about-img-wrap">
+            <img src="tiger.jpg" alt="that's me" class="about-img" onerror="this.style.display='none'; document.querySelector('.about-img-fallback').style.display='flex'"/>
+            <div class="about-img-fallback">🐯</div>
+          </div>
+        </div>
+        <div class="about-right">
+          <p>
+            I'm Tiger. Been writing code for about 4 years now — started out of boredom
+            during monsoon season, ended up genuinely obsessed. That's kind of how it goes.
+          </p>
+          <p>
+            Mostly backend — FastAPI, Python, a bit of ML when I feel like it.
+            I don't know everything and I'm fine with that. What I do know is how to
+            figure stuff out fast, which honestly covers most situations.
+          </p>
+          <p>
+            Outside of code I'm either napping in a patch of sunlight or thinking about
+            the next thing to build. Sometimes both at the same time.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">4+</span>
+              <span class="stat-label">years coding</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">12+</span>
+              <span class="stat-label">projects shipped</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">0</span>
+              <span class="stat-label">bugs left behind<br><small>(that I know of)</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section section-dark fade-section">
+    <div class="section-inner">
+      <p class="section-tag">02 — projects</p>
+      <h2 class="section-heading">stuff i've built</h2>
+
+      <div class="projects-list">
+
+        <div class="project-row">
+          <div class="project-meta">
+            <span class="project-num">01</span>
+            <span class="project-badge live">live</span>
+          </div>
+          <div class="project-body">
+            <h3>JungleTrack <span class="project-icon">🌿</span></h3>
+            <p>Real-time GPS tracker for dense terrain. Started as something I personally needed. Turned out websockets at scale are not as fun as they sound — but I figured it out.</p>
+            <div class="tags"><span>Python</span><span>FastAPI</span><span>Leaflet.js</span><span>WebSockets</span></div>
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-meta">
+            <span class="project-num">02</span>
+            <span class="project-badge live">live</span>
+          </div>
+          <div class="project-body">
+            <h3>PounceAI <span class="project-icon">🦌</span></h3>
+            <p>ML model for timing predictions. The dataset I trained it on took longer to scrape than the model took to build. Works better than expected. Also accidentally useful for stocks, which was not the plan.</p>
+            <div class="tags"><span>Python</span><span>TensorFlow</span><span>Streamlit</span></div>
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-meta">
+            <span class="project-num">03</span>
+            <span class="project-badge live">live</span>
+          </div>
+          <div class="project-body">
+            <h3>RiverCross <span class="project-icon">🌊</span></h3>
+            <p>Routing app that uses elevation data to find safe crossing points. Algorithm took two weeks to get right. UI took two hours. I have thoughts about that ratio.</p>
+            <div class="tags"><span>Node.js</span><span>Express</span><span>Mapbox API</span></div>
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-meta">
+            <span class="project-num">04</span>
+            <span class="project-badge wip">wip</span>
+          </div>
+          <div class="project-body">
+            <h3>StealthMode <span class="project-icon">🐾</span></h3>
+            <p>Browser extension for zero-footprint browsing. Built it because I wanted it to exist. Fingerprinting turned out to be a much deeper rabbit hole than expected. Still in it.</p>
+            <div class="tags"><span>JavaScript</span><span>Chrome Extension API</span></div>
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-meta">
+            <span class="project-num">05</span>
+            <span class="project-badge wip">wip</span>
+          </div>
+          <div class="project-body">
+            <h3>MealPlanner Pro <span class="project-icon">🍖</span></h3>
+            <p>AI meal planner. High protein. Zero vegetables. I know how this looks. The recommendation engine is actually solid — built the preference weighting from scratch instead of just dumping everything into an API call.</p>
+            <div class="tags"><span>React</span><span>Node.js</span><span>OpenAI API</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section fade-section">
+    <div class="section-inner">
+      <p class="section-tag">03 — skills</p>
+      <h2 class="section-heading">what I work with</h2>
+
+      <div class="skills-layout">
+        <div class="skills-col">
+          <p class="skills-col-title">day-to-day</p>
+          <ul class="skills-list">
+            <li><span class="sk-name">Python</span><span class="sk-note">could write it half asleep</span></li>
+            <li><span class="sk-name">FastAPI</span><span class="sk-note">go-to for backends</span></li>
+            <li><span class="sk-name">JavaScript</span><span class="sk-note">love-hate relationship</span></li>
+            <li><span class="sk-name">HTML & CSS</span><span class="sk-note">you're looking at it</span></li>
+            <li><span class="sk-name">Git</span><span class="sk-note">commit early, commit often</span></li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <p class="skills-col-title">getting into</p>
+          <ul class="skills-list">
+            <li><span class="sk-name">React</span><span class="sk-note">hooks still trip me up</span></li>
+            <li><span class="sk-name">Machine Learning</span><span class="sk-note">TensorFlow mostly</span></li>
+            <li><span class="sk-name">SQL</span><span class="sk-note">joins don't scare me anymore</span></li>
+            <li><span class="sk-name">Docker</span><span class="sk-note">works on my machine™</span></li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <p class="skills-col-title">also know</p>
+          <ul class="skills-list">
+            <li><span class="sk-name">REST APIs</span><span class="sk-note">design + build</span></li>
+            <li><span class="sk-name">Linux</span><span class="sk-note">Ubuntu daily driver</span></li>
+            <li><span class="sk-name">Streamlit</span><span class="sk-note">fast ML demos</span></li>
+            <li><span class="sk-name">OpenCV</span><span class="sk-note">computer vision stuff</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section section-dark fade-section">
+    <div class="section-inner">
+      <p class="section-tag">04 — testimonials</p>
+      <h2 class="section-heading">what others say</h2>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Hired Tiger to build our internal tracking system. Delivered two days early, which honestly made me suspicious. The code was clean enough that I actually read through it — that's never happened before."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">🦁</div>
+            <div>
+              <p class="testimonial-name">Leo</p>
+              <p class="testimonial-role">CEO, Savannah Tech</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Gave him a half-baked idea and a deadline I thought was impossible. He came back with something better than what I described and still had time to nap. Genuinely don't know how."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">🐘</div>
+            <div>
+              <p class="testimonial-name">Elara</p>
+              <p class="testimonial-role">Founder, DeepForest Labs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The API handles 10k daily requests without a hiccup. Asked him how. He said 'I just thought about it properly the first time.' Annoying thing to hear. Also completely true."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">🦊</div>
+            <div>
+              <p class="testimonial-name">Felix</p>
+              <p class="testimonial-role">Backend Lead, Wilderness Systems</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Asked for a simple dashboard. Got a full analytics suite with export features I hadn't asked for but immediately needed. Would've been annoyed if it wasn't exactly right."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">🦅</div>
+            <div>
+              <p class="testimonial-name">Aria</p>
+              <p class="testimonial-role">Product Manager, HighNest Co.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section fade-section">
+    <div class="section-inner">
+      <p class="section-tag">05 — contact</p>
+      <div class="contact-layout">
+        <div class="contact-left">
+          <h2 class="section-heading">let's talk.</h2>
+          <p>Got a project? A problem? Just want to talk code? I'm around. Usually reply same day, sometimes faster depending on what the jungle's like.</p>
+          <br>
+          <p>📧 tiger@jungle.dev</p>
+          <p>📍 the jungle — remote friendly</p>
+          <p>🕐 IST timezone</p>
+          <br>
+          <p class="contact-note">no agencies please. direct only.</p>
+        </div>
+
+        <div class="contact-right">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">name</label>
+              <input type="text" id="name" placeholder="who are you" />
+              <span class="field-error" id="name-err">can't be empty</span>
+            </div>
+            <div class="form-group">
+              <label for="email">email</label>
+              <input type="email" id="email" placeholder="so I can reply" />
+              <span class="field-error" id="email-err">that doesn't look right</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">subject</label>
+            <input type="text" id="subject" placeholder="what's this about" />
+          </div>
+          <div class="form-group">
+            <label for="message">message</label>
+            <textarea id="message" rows="5" placeholder="what are you building"></textarea>
+            <span class="field-error" id="msg-err">say something at least</span>
+          </div>
+          <button class="btn-main" id="submitBtn" onclick="handleSubmit()">send it →</button>
+          <p class="form-success" id="formSuccess">got it — tiger will be in touch 🐯</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <span>tiger — 2026</span>
+      <span class="footer-sep">·</span>
+      <span>built from scratch. no templates.</span>
+    </div>
+    <div class="footer-right">
+      <span onclick="smoothScroll('hero')" class="footer-top">back to top ↑</span>
+    </div>
+  </footer>
+
+  <script>
+    console.log('%c hey.', 'color: #e8622a; font-size: 24px; font-weight: bold;');
+    console.log('%c you\'re looking at my source code — respect.\n if you spot something weird, tiger@jungle.dev', 'color: #6b6b6b; font-size: 13px;');
+
+    function smoothScroll(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      localStorage.setItem('theme', html.getAttribute('data-theme'));
+    }
+
+    (function() {
+      const t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open');
+    }
+
+    function mobileNav(id) {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      setTimeout(() => smoothScroll(id), 120);
+    }
+
+    document.addEventListener('click', e => {
+      const menu = document.getElementById('mobileMenu');
+      const btn  = document.getElementById('hamburger');
+      if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+      }
+    });
+
+    const words = ['things', 'APIs', 'fast sites', 'ideas', 'backends'];
+    let wi = 0, ci = 0, deleting = false;
+    const el = document.querySelector('.typed-word');
+
+    function type() {
+      const word = words[wi];
+      if (!deleting) {
+        el.textContent = word.slice(0, ++ci);
+        if (ci === word.length) { deleting = true; setTimeout(type, 1400); return; }
+      } else {
+        el.textContent = word.slice(0, --ci);
+        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
+      }
+      setTimeout(type, deleting ? 60 : 100);
+    }
+
+    type();
+
+    new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 }).observe.bind(
+      new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.12 })
+    );
+
+    const fadeObs = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-section').forEach(s => fadeObs.observe(s));
+
+    const navObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.nav-links li').forEach(l => l.classList.remove('active'));
+          const m = document.querySelector(`.nav-links li[data-section="${e.target.id}"]`);
+          if (m) m.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+    });
+
+    function setError(inputId, errId, show) {
+      document.getElementById(inputId).classList.toggle('input-error', show);
+      const e = document.getElementById(errId);
+      if (e) e.classList.toggle('show', show);
+    }
+
+    function handleSubmit() {
+      const n = document.getElementById('name').value.trim();
+      const em = document.getElementById('email').value.trim();
+      const m = document.getElementById('message').value.trim();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+
+      setError('name', 'name-err', !n);
+      setError('email', 'email-err', !emailOk);
+      setError('message', 'msg-err', !m);
+
+      if (!n || !emailOk || !m) return;
+
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = 'sending...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        document.getElementById('formSuccess').classList.add('show');
+        btn.textContent = 'send it →';
+        btn.disabled = false;
+        ['name','email','subject','message'].forEach(id => document.getElementById(id).value = '');
+        setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 4000);
+      }, 800);
+    }
+
+    ['name','email','message'].forEach(id => {
+      const map = { name: 'name-err', email: 'email-err', message: 'msg-err' };
+      document.getElementById(id).addEventListener('input', () => setError(id, map[id], false));
+    });
+  </script>
+
+</body>
+</html>
